@@ -54,8 +54,8 @@
 
 **Files:**
 
-- Create: `cli/benchmark.go`
-- Test: `cli/benchmark_test.go`
+- Create: `cmd/benchmark.go`
+- Test: `cmd/benchmark_test.go`
 - Modify: `layering_test.go`
 - Modify: `README.md`
 - Modify: `CLAUDE.md`

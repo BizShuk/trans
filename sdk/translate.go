@@ -68,7 +68,7 @@ type Translator struct {
 func New(opt Options) (*Translator, error) {
 	model := opt.Model
 	if model == "" {
-		model = route(opt.From, opt.To)
+		model = Route(opt.From, opt.To)
 	}
 
 	spec, err := Lookup(model)

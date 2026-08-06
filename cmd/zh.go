@@ -1,4 +1,4 @@
-package cli
+package cmd
 
 import (
 	"github.com/bizshuk/trans/config"

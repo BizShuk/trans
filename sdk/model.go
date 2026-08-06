@@ -108,16 +108,24 @@ func Lookup(m Model) (Spec, error) {
 	return spec, nil
 }
 
-// route 依語言對挑預設模型。
+// Route 依語言對挑預設模型。
 //
 // 中文互轉一律走 OpenCC —— 那是查表問題，交給神經模型只會換來不確定性
-// 與百倍延遲。其餘語言對走 NLLB：一顆模型覆蓋所有語言對，
-// 不必為每個方向各裝一顆。
-func route(from, to string) Model {
+// 與百倍延遲。
+//
+// 其餘語言對走 Qwen2.5-1.5B 而非專用 NMT。這與直覺相反，但有實測依據
+// （docs/memory/2026-08-06-engine-findings.md §5）：同一句財報文字，
+// 只有 Qwen 把 `gross margin` 譯成 `毛利率`，NLLB 給「總利潤」、
+// OPUS-MT 給「總差幅」。專用 NMT 的訓練語料裡，領域術語就是一般詞，
+// 而領域術語正是我們處理的文本裡最要緊的部分。
+//
+// 代價是速度：Qwen 3.3s、NLLB 6.9s、OPUS-MT 0.22s。要吞吐時明說
+// `--model opus-mt` 並配上術語表，那條路仍然開著。
+func Route(from, to string) Model {
 	if opencc.New().Supports(from, to) {
 		return ModelOpenCC
 	}
-	return ModelNLLB600M
+	return ModelQwen25
 }
 
 func modelNames() string {

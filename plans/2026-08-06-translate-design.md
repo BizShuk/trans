@@ -73,12 +73,12 @@ API 為 `New(conversion)` + `Convert(string)`，無 cgo、無外部檔案。
 
 ### 2.3 SDK 是主體，CLI 是它的第一個使用者
 
-`sdk` 套件是 SDK；`cli` 只做旗標解析與輸出格式，根目錄 `main.go`
+`sdk` 套件是 SDK；`cmd` 只做旗標解析與輸出格式，根目錄 `main.go`
 負責 application bootstrap。
 反過來（先寫 CLI 再抽 SDK）會讓 SDK 的簽名帶著 CLI 的味道 ——
 `--verbose`、`os.Exit`、印表格這些東西一旦滲進 library，就再也拔不乾淨。
 
-驗收標準：`cli/` 底下不得出現任何語言判斷或引擎選擇邏輯。
+驗收標準：`cmd/` 底下不得出現任何語言判斷或引擎選擇邏輯。
 
 ### 2.4 引擎不可用時明確失敗，不靜默降級
 
@@ -211,7 +211,7 @@ trans/
 ├── segment/            # 斷句、分批、重組（純函式）
 ├── glossary/           # user-owned forced replacement rules
 ├── benchmark/          # fixed corpus、Session runner、results
-├── cli/                # cobra：zh / text / models / engine
+├── cmd/                # cobra：zh / text / models / engine
 ├── config/             # 扁平 viper key
 ├── scripts/ct2_server.py
 └── ecosystem.config.js # pm2：trans-ct2 sidecar

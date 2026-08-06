@@ -50,9 +50,9 @@
 | Benchmark Model result | `completed` | 全部 Sample 都已產生 output | `benchmark.StatusCompleted` |
 | Benchmark Model result | `unavailable` | runtime、服務或模型檔不可用 | `benchmark.StatusUnavailable` |
 | Benchmark Model result | `failed` | 模型可用，但至少一個 Sample translation 失敗 | `benchmark.StatusFailed` |
-| Engine readiness | `ready` | 模型與 runtime 均可用 | `cli/engine.go` |
-| Engine readiness | `down` | 健康檢查失敗 | `cli/engine.go` |
-| Engine readiness | `error` | Translator 無法建立或設定無效 | `cli/engine.go` |
+| Engine readiness | `ready` | 模型與 runtime 均可用 | `cmd/engine.go` |
+| Engine readiness | `down` | 健康檢查失敗 | `cmd/engine.go` |
+| Engine readiness | `error` | Translator 無法建立或設定無效 | `cmd/engine.go` |
 
 ## OpenCC Profile 對照 (OpenCC Profiles)
 

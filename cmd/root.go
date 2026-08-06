@@ -1,8 +1,8 @@
-// Package cli 組裝 translate 的命令樹。
+// Package cmd 組裝 translate 的命令樹。
 //
 // 這一層只做旗標解析與輸出格式：任何語言判斷或引擎選擇都屬於 SDK。
 // 違反了就會出現「CLI 這樣翻、SDK 那樣翻」的分岔，而那種 bug 極難查。
-package cli
+package cmd
 
 import (
 	"fmt"

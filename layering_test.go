@@ -20,7 +20,7 @@ const modulePath = "github.com/bizshuk/trans"
 // `sdk` 套件是 SDK 本體。它`不得`依賴 config：任何 import 這個 SDK 的程式
 // 都不該被迫接受一個全域設定來源。
 var allowedImports = map[string][]string{
-	".":                {"cli", "config"},
+	".":                {"cmd", "config"},
 	"sdk":              {"engine", "engine/opencc", "engine/openaiapi", "engine/ct2", "glossary", "segment"},
 	"segment":          {},
 	"engine":           {},
@@ -30,7 +30,7 @@ var allowedImports = map[string][]string{
 	"glossary":         {},
 	"benchmark":        {"sdk"},
 	"config":           {},
-	"cli":              {"sdk", "benchmark", "config", "glossary"},
+	"cmd":              {"sdk", "benchmark", "config", "glossary"},
 }
 
 func TestPackagesFollowDependencyContract(t *testing.T) {
@@ -133,8 +133,8 @@ func TestExecutableUsesTransAppName(t *testing.T) {
 
 func TestRuntimePathsDoNotUseObsoleteAppName(t *testing.T) {
 	paths := []string{
-		"cli/glossary.go",
-		"cli/pull.go",
+		"cmd/glossary.go",
+		"cmd/pull.go",
 		"ecosystem.config.js",
 		"scripts/ct2_server.py",
 		"scripts/pull_model.py",

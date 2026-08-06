@@ -21,7 +21,7 @@ trans/
 ├── segment/             # Document segmentation 與 lossless reassembly
 ├── glossary/            # user-owned forced replacement rules
 ├── benchmark/           # Sample corpus、Session runner、result persistence
-├── cli/                 # Cobra command tree
+├── cmd/                 # Cobra command tree
 ├── config/              # CLI-only gosdk/viper configuration
 ├── scripts/             # metadata setup、model pull、CT2 sidecar
 ├── docs/                # terminology 與 retrospective memory
@@ -50,7 +50,7 @@ trans/
 | --- | --- | --- |
 | 中文轉換 (Chinese Conversion) | `sdk`、`engine/opencc`、`glossary`、`segment` | `sdk.ToTraditional`、`sdk.New`、`translate zh` |
 | 跨語言翻譯 (Cross-language Translation) | `sdk`、`engine/openaiapi`、`engine/ct2`、`segment` | `sdk.New`、`sdk.Translator.Document`、`translate text` |
-| 模型治理與評估 (Model Operations and Evaluation) | `sdk/model.go`、`benchmark`、`cli` | `sdk.Models`、`translate engine status`、`translate benchmark` |
+| 模型治理與評估 (Model Operations and Evaluation) | `sdk/model.go`、`benchmark`、`cmd` | `sdk.Models`、`translate engine status`、`translate benchmark` |
 
 ## 分層契約 (Layering Contract)
 
@@ -60,8 +60,8 @@ trans/
 | adapter | `engine/*` | `engine` |
 | SDK | `sdk` | `engine`、`engine/*`、`glossary`、`segment` |
 | application | `benchmark` | `sdk` |
-| CLI | `cli` | `sdk`、`benchmark`、`config`、`glossary` |
-| binary | `.` | `cli`、`config` |
+| CLI | `cmd` | `sdk`、`benchmark`、`config`、`glossary` |
+| binary | `.` | `cmd`、`config` |
 
 `layering_test.go` 同時驗證 package coverage、SDK/config separation、adapter isolation、
 root executable 與 application config identity。
@@ -69,7 +69,7 @@ root executable 與 application config identity。
 ## 不變式 (Invariants)
 
 1. `sdk` 不得依賴 `config`。設定來源由 application 決定，SDK 只接受 `Options`。
-2. `cli` 不得擁有語言判斷或 Engine routing；CLI 與 SDK 必須共用同一條行為路徑。
+2. `cmd` 不得擁有語言判斷或 Engine routing；CLI 與 SDK 必須共用同一條行為路徑。
 3. Engine adapter 彼此獨立，不得互相 import 或綁定彼此 runtime。
 4. 不做 silent fallback。Engine、Model 或語言對不可用時回傳明確錯誤。
 5. `segment.Parse → Reassemble` 必須保留原始空白、縮排與段落；批次數量不符即失敗。

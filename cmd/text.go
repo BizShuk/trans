@@ -1,4 +1,4 @@
-package cli
+package cmd
 
 import (
 	"github.com/bizshuk/trans/config"
@@ -55,15 +55,22 @@ func runText(c *cobra.Command, args []string) error {
 		return err
 	}
 
+	// 先問 SDK 實際會用哪顆模型：端點與批次上限都取決於它，
+	// 而在這裡自己複製一份路由規則，遲早會與 SDK 分岔。
+	model := sdk.Model(textModel)
+	if model == "" {
+		model = sdk.Route(textFrom, textTo)
+	}
+
 	t, err := sdk.New(sdk.Options{
-		Model:       sdk.Model(textModel),
+		Model:       model,
 		From:        textFrom,
 		To:          textTo,
 		Prompt:      textPrompt,
-		Endpoint:    firstNonEmpty(textEndpoint, endpointFor(textModel)),
+		Endpoint:    firstNonEmpty(textEndpoint, endpointFor(string(model))),
 		EngineModel: textEngineModel,
 		Timeout:     config.RequestTimeout(),
-		MaxChars:    maxCharsFor(textModel),
+		MaxChars:    maxCharsFor(string(model)),
 		Glossary:    gloss,
 	})
 	if err != nil {

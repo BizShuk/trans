@@ -3,11 +3,11 @@ package main
 
 import (
 	gosdkconfig "github.com/bizshuk/gosdk/config"
-	"github.com/bizshuk/trans/cli"
+	"github.com/bizshuk/trans/cmd"
 	appconfig "github.com/bizshuk/trans/config"
 )
 
 func main() {
 	appconfig.Default(gosdkconfig.WithAppName("trans"))
-	cli.Execute()
+	cmd.Execute()
 }

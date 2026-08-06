@@ -41,16 +41,18 @@ func TestHealthPointsAtTheMissingDependency(t *testing.T) {
 	if err != nil {
 		t.Fatalf("New: %v", err)
 	}
-	if tr.Model() != ModelNLLB600M {
-		t.Fatalf("跨語言預設應走 NLLB，got %s", tr.Model())
+	// 跨語言預設是 Qwen 而非專用 NMT：財經術語上只有它譯對
+	// （docs/memory/2026-08-06-engine-findings.md §5）。
+	if tr.Model() != ModelQwen25 {
+		t.Fatalf("跨語言預設應走 qwen2.5-1.5b，got %s", tr.Model())
 	}
 
 	err = tr.Health(context.Background())
 	if err == nil {
 		t.Fatal("sidecar 不在時 Health 應失敗")
 	}
-	if !strings.Contains(err.Error(), "sidecar") {
-		t.Errorf("錯誤訊息應指出缺的是 sidecar：%v", err)
+	if !strings.Contains(err.Error(), "ollama serve") {
+		t.Errorf("錯誤訊息應指出該啟動什麼：%v", err)
 	}
 }
 
