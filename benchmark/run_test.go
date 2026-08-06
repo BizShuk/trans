@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 )
 
 func TestRunBenchmarksEveryKnownModelWithoutFallback(t *testing.T) {
@@ -26,16 +26,16 @@ func TestRunBenchmarksEveryKnownModelWithoutFallback(t *testing.T) {
 	if report.SessionID != "test-session" || report.SampleCount != len(samples) {
 		t.Fatalf("unexpected report header: %+v", report)
 	}
-	if len(report.Results) != len(translate.Models()) {
-		t.Fatalf("model result count = %d, want %d", len(report.Results), len(translate.Models()))
+	if len(report.Results) != len(sdk.Models()) {
+		t.Fatalf("model result count = %d, want %d", len(report.Results), len(sdk.Models()))
 	}
 
-	results := make(map[translate.Model]ModelResult, len(report.Results))
+	results := make(map[sdk.Model]ModelResult, len(report.Results))
 	for _, result := range report.Results {
 		results[result.Model] = result
 	}
 
-	openCC := results[translate.ModelOpenCC]
+	openCC := results[sdk.ModelOpenCC]
 	if openCC.Status != StatusCompleted {
 		t.Fatalf("opencc status = %q, error = %q", openCC.Status, openCC.Error)
 	}
@@ -46,8 +46,8 @@ func TestRunBenchmarksEveryKnownModelWithoutFallback(t *testing.T) {
 		t.Errorf("opencc output = %q", openCC.Samples[0].Output)
 	}
 
-	for _, spec := range translate.Models() {
-		if spec.Model == translate.ModelOpenCC {
+	for _, spec := range sdk.Models() {
+		if spec.Model == sdk.ModelOpenCC {
 			continue
 		}
 		result := results[spec.Model]

@@ -1,9 +1,9 @@
-// Package translate 是語言轉換的 SDK：中文字形與地區用語`轉換`，
+// Package sdk 是語言轉換的 SDK：中文字形與地區用語`轉換`，
 // 以及跨語言`翻譯`，共用同一組介面。
 //
 // 這個套件是主體，CLI 只是它的第一個使用者 —— 因此這裡不讀設定檔、
 // 不寫 stdout、不呼叫 os.Exit。所有可調項都在 Options 上。
-package translate
+package sdk
 
 import (
 	"context"

@@ -7,7 +7,7 @@ import (
 	"text/tabwriter"
 
 	"github.com/bizshuk/trans/config"
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 	"github.com/spf13/cobra"
 )
 
@@ -39,7 +39,7 @@ func runEngineStatus(c *cobra.Command, _ []string) error {
 	fmt.Fprintln(w, "MODEL\tENGINE\tSTATUS\tDETAIL")
 
 	ready := 0
-	for _, spec := range translate.Models() {
+	for _, spec := range sdk.Models() {
 		status, detail := probe(c.Context(), spec)
 		if status == "ready" {
 			ready++
@@ -48,12 +48,12 @@ func runEngineStatus(c *cobra.Command, _ []string) error {
 	}
 	w.Flush()
 
-	fmt.Printf("\n%d/%d 顆模型就緒\n", ready, len(translate.Models()))
+	fmt.Printf("\n%d/%d 顆模型就緒\n", ready, len(sdk.Models()))
 	return nil
 }
 
-func probe(ctx context.Context, spec translate.Spec) (string, string) {
-	t, err := translate.New(translate.Options{
+func probe(ctx context.Context, spec sdk.Spec) (string, string) {
+	t, err := sdk.New(sdk.Options{
 		Model:    spec.Model,
 		To:       "zh-TW",
 		Endpoint: endpointFor(string(spec.Model)),

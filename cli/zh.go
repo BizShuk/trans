@@ -2,7 +2,7 @@ package cli
 
 import (
 	"github.com/bizshuk/trans/config"
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 	"github.com/spf13/cobra"
 )
 
@@ -58,8 +58,8 @@ func runZH(c *cobra.Command, args []string) error {
 		return err
 	}
 
-	t, err := translate.New(translate.Options{
-		Model:    translate.ModelOpenCC,
+	t, err := sdk.New(sdk.Options{
+		Model:    sdk.ModelOpenCC,
 		To:       target,
 		Profile:  profile,
 		MaxChars: config.SegmentMaxChars(),

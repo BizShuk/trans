@@ -3,7 +3,7 @@ package benchmark
 import (
 	"time"
 
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 )
 
 // Status 是一個 Model 在本次 Session 的完成狀態。
@@ -31,21 +31,21 @@ type Report struct {
 
 // ModelResult 是一個 Model 在同一組 Sample corpus 上的結果。
 type ModelResult struct {
-	SessionID      string          `json:"session_id"`
-	Model          translate.Model `json:"model"`
-	Engine         string          `json:"engine"`
-	EngineModel    string          `json:"engine_model,omitempty"`
-	Requires       string          `json:"requires,omitempty"`
-	Description    string          `json:"description"`
-	Status         Status          `json:"status"`
-	Error          string          `json:"error,omitempty"`
-	StartedAt      time.Time       `json:"started_at"`
-	FinishedAt     time.Time       `json:"finished_at"`
-	DurationNS     int64           `json:"duration_ns"`
-	InputCount     int             `json:"input_count"`
-	CompletedCount int             `json:"completed_count"`
-	FailedCount    int             `json:"failed_count"`
-	Samples        []SampleResult  `json:"samples"`
+	SessionID      string         `json:"session_id"`
+	Model          sdk.Model      `json:"model"`
+	Engine         string         `json:"engine"`
+	EngineModel    string         `json:"engine_model,omitempty"`
+	Requires       string         `json:"requires,omitempty"`
+	Description    string         `json:"description"`
+	Status         Status         `json:"status"`
+	Error          string         `json:"error,omitempty"`
+	StartedAt      time.Time      `json:"started_at"`
+	FinishedAt     time.Time      `json:"finished_at"`
+	DurationNS     int64          `json:"duration_ns"`
+	InputCount     int            `json:"input_count"`
+	CompletedCount int            `json:"completed_count"`
+	FailedCount    int            `json:"failed_count"`
+	Samples        []SampleResult `json:"samples"`
 }
 
 // SampleResult 保存單句的 input、output、error 與 duration。

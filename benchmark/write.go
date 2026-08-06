@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"time"
 
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 )
 
 var pathSegmentPattern = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9._-]*$`)
@@ -22,14 +22,14 @@ type sessionSummary struct {
 }
 
 type modelSummary struct {
-	Model          translate.Model `json:"model"`
-	Engine         string          `json:"engine"`
-	Status         Status          `json:"status"`
-	Error          string          `json:"error,omitempty"`
-	CompletedCount int             `json:"completed_count"`
-	FailedCount    int             `json:"failed_count"`
-	DurationNS     int64           `json:"duration_ns"`
-	ResultPath     string          `json:"result_path"`
+	Model          sdk.Model `json:"model"`
+	Engine         string    `json:"engine"`
+	Status         Status    `json:"status"`
+	Error          string    `json:"error,omitempty"`
+	CompletedCount int       `json:"completed_count"`
+	FailedCount    int       `json:"failed_count"`
+	DurationNS     int64     `json:"duration_ns"`
+	ResultPath     string    `json:"result_path"`
 }
 
 // Write 將 Report 保存成 Session → Model → result 結構，且不覆寫既有 Session。

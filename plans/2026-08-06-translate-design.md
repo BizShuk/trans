@@ -93,14 +93,14 @@ API 為 `New(conversion)` + `Convert(string)`，無 cgo、無外部檔案。
 ### 3.1 SDK
 
 ```go
-import translate "github.com/bizshuk/trans/sdk"
+import "github.com/bizshuk/trans/sdk"
 
 // 最短路徑：簡體轉台灣繁體。
-out, err := translate.ToTraditional(ctx, text)
+out, err := sdk.ToTraditional(ctx, text)
 
 // 完整形式。
-t, err := translate.New(translate.Options{
-    Model:  translate.ModelOpenCC,     // 見 §4 的模型表
+t, err := sdk.New(sdk.Options{
+    Model:  sdk.ModelOpenCC,     // 見 §4 的模型表
     From:   "zh-Hans",                 // 空 = 自動偵測
     To:     "zh-TW",
 })

@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 )
 
 func TestWriteUsesSessionModelResultLayout(t *testing.T) {
@@ -20,11 +20,11 @@ func TestWriteUsesSessionModelResultLayout(t *testing.T) {
 		SampleCount: 1,
 		Results: []ModelResult{
 			{
-				SessionID: "20260806T080000Z", Model: translate.ModelOpenCC,
+				SessionID: "20260806T080000Z", Model: sdk.ModelOpenCC,
 				Engine: "opencc", Status: StatusCompleted, InputCount: 1, CompletedCount: 1,
 			},
 			{
-				SessionID: "20260806T080000Z", Model: translate.ModelQwen25,
+				SessionID: "20260806T080000Z", Model: sdk.ModelQwen25,
 				Engine: "openaiapi", Status: StatusUnavailable, Error: "model unavailable",
 			},
 		},
@@ -38,7 +38,7 @@ func TestWriteUsesSessionModelResultLayout(t *testing.T) {
 		t.Fatalf("session dir = %s", sessionDir)
 	}
 
-	for _, model := range []translate.Model{translate.ModelOpenCC, translate.ModelQwen25} {
+	for _, model := range []sdk.Model{sdk.ModelOpenCC, sdk.ModelQwen25} {
 		path := filepath.Join(sessionDir, string(model), "result.json")
 		raw, err := os.ReadFile(path)
 		if err != nil {

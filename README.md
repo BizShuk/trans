@@ -81,12 +81,12 @@ translate zh --glossary ./glossary.txt "计算机"
 ### SDK
 
 ```go
-import translate "github.com/bizshuk/trans/sdk"
+import "github.com/bizshuk/trans/sdk"
 
-out, err := translate.ToTraditional(ctx, text)
+out, err := sdk.ToTraditional(ctx, text)
 
-t, err := translate.New(translate.Options{
-    Model: translate.ModelOpenCC,
+t, err := sdk.New(sdk.Options{
+    Model: sdk.ModelOpenCC,
     To:    "zh-TW",
 })
 out, err := t.Document(ctx, longText)

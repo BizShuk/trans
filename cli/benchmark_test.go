@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 	"github.com/spf13/viper"
 )
 
@@ -33,7 +33,7 @@ func TestBenchmarkCommandWritesStructuredSession(t *testing.T) {
 	if strings.TrimSpace(output.String()) != sessionDir {
 		t.Errorf("command output = %q, want %q", output.String(), sessionDir)
 	}
-	for _, spec := range translate.Models() {
+	for _, spec := range sdk.Models() {
 		path := filepath.Join(sessionDir, string(spec.Model), "result.json")
 		if _, err := os.Stat(path); err != nil {
 			t.Errorf("model result missing at %s: %v", path, err)

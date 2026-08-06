@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 )
 
 // Options 是一次 Benchmark Session 的執行參數。
@@ -27,17 +27,17 @@ func Run(ctx context.Context, opt Options) Report {
 		SessionID:   opt.SessionID,
 		StartedAt:   startedAt,
 		SampleCount: len(opt.Samples),
-		Results:     make([]ModelResult, 0, len(translate.Models())),
+		Results:     make([]ModelResult, 0, len(sdk.Models())),
 	}
 
-	for _, spec := range translate.Models() {
+	for _, spec := range sdk.Models() {
 		report.Results = append(report.Results, runModel(ctx, opt, spec))
 	}
 	report.FinishedAt = time.Now().UTC()
 	return report
 }
 
-func runModel(ctx context.Context, opt Options, spec translate.Spec) ModelResult {
+func runModel(ctx context.Context, opt Options, spec sdk.Spec) ModelResult {
 	startedAt := time.Now().UTC()
 	result := ModelResult{
 		SessionID:   opt.SessionID,
@@ -56,7 +56,7 @@ func runModel(ctx context.Context, opt Options, spec translate.Spec) ModelResult
 		return finishModel(result, startedAt)
 	}
 
-	translator, err := translate.New(translate.Options{
+	translator, err := sdk.New(sdk.Options{
 		Model:    spec.Model,
 		From:     opt.Samples[0].From,
 		To:       opt.Samples[0].To,

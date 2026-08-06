@@ -2,7 +2,7 @@ package cli
 
 import (
 	"github.com/bizshuk/trans/config"
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 	"github.com/spf13/cobra"
 )
 
@@ -55,8 +55,8 @@ func runText(c *cobra.Command, args []string) error {
 		return err
 	}
 
-	t, err := translate.New(translate.Options{
-		Model:       translate.Model(textModel),
+	t, err := sdk.New(sdk.Options{
+		Model:       sdk.Model(textModel),
 		From:        textFrom,
 		To:          textTo,
 		Prompt:      textPrompt,
@@ -86,10 +86,10 @@ func runText(c *cobra.Command, args []string) error {
 // endpointFor 依模型挑設定裡的端點：兩種引擎的預設埠不同，
 // 讓使用者為了指定端點還要先知道模型跑在哪個引擎上，是多餘的負擔。
 func endpointFor(model string) string {
-	switch translate.Model(model) {
-	case translate.ModelQwen25:
+	switch sdk.Model(model) {
+	case sdk.ModelQwen25:
 		return config.OpenAIEndpoint()
-	case translate.ModelNLLB600M, translate.ModelOpusMT:
+	case sdk.ModelNLLB600M, sdk.ModelOpusMT:
 		return config.CT2Endpoint()
 	default:
 		return ""
@@ -99,8 +99,8 @@ func endpointFor(model string) string {
 // maxCharsFor 給 decoder-only 模型較大的批次：它們吃得下更長的上下文，
 // 跨句代名詞因此譯得更準。NMT 的上限硬得多。
 func maxCharsFor(model string) int {
-	switch translate.Model(model) {
-	case translate.ModelQwen25:
+	switch sdk.Model(model) {
+	case sdk.ModelQwen25:
 		return config.SegmentMaxCharsLLM()
 	default:
 		return config.SegmentMaxChars()

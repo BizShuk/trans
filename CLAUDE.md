@@ -48,9 +48,9 @@ trans/
 
 | 業務領域 (Domain) | 套件/模組 (Package/Module) | 進入點 (Entry Point) |
 | --- | --- | --- |
-| 中文轉換 (Chinese Conversion) | `sdk`、`engine/opencc`、`glossary`、`segment` | `translate.ToTraditional`、`translate.New`、`translate zh` |
-| 跨語言翻譯 (Cross-language Translation) | `sdk`、`engine/openaiapi`、`engine/ct2`、`segment` | `translate.New`、`Translator.Document`、`translate text` |
-| 模型治理與評估 (Model Operations and Evaluation) | `sdk/model.go`、`benchmark`、`cli` | `translate.Models`、`translate engine status`、`translate benchmark` |
+| 中文轉換 (Chinese Conversion) | `sdk`、`engine/opencc`、`glossary`、`segment` | `sdk.ToTraditional`、`sdk.New`、`translate zh` |
+| 跨語言翻譯 (Cross-language Translation) | `sdk`、`engine/openaiapi`、`engine/ct2`、`segment` | `sdk.New`、`sdk.Translator.Document`、`translate text` |
+| 模型治理與評估 (Model Operations and Evaluation) | `sdk/model.go`、`benchmark`、`cli` | `sdk.Models`、`translate engine status`、`translate benchmark` |
 
 ## 分層契約 (Layering Contract)
 
@@ -113,7 +113,7 @@ root `main.go` 以 gosdk application name `trans` 初始化設定。預設根目
 ```
 
 設定預設值由 `config/default_settings.json` 單一擁有。`config` 只服務 CLI；
-SDK consumer 必須透過 `translate.Options` 傳入 Model、Endpoint、Timeout、Profile 與 Glossary。
+SDK consumer 必須透過 `sdk.Options` 傳入 Model、Endpoint、Timeout、Profile 與 Glossary。
 設定檔中尚未被 application flow 消費的 key 不代表對應 capability 已完成。
 
 ## Runtime 與部署 (Runtime and Deployment)

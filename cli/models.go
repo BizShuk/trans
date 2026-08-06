@@ -5,7 +5,7 @@ import (
 	"os"
 	"text/tabwriter"
 
-	translate "github.com/bizshuk/trans/sdk"
+	"github.com/bizshuk/trans/sdk"
 	"github.com/spf13/cobra"
 )
 
@@ -26,7 +26,7 @@ func init() {
 func runModels(*cobra.Command, []string) error {
 	w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
 	fmt.Fprintln(w, "MODEL\tENGINE\tREQUIRES\tDESCRIPTION")
-	for _, m := range translate.Models() {
+	for _, m := range sdk.Models() {
 		fmt.Fprintf(w, "%s\t%s\t%s\t%s\n", m.Model, m.Engine, orDash(m.Requires), m.Description)
 	}
 	return w.Flush()
