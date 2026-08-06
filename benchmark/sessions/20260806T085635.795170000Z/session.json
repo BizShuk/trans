@@ -1,0 +1,57 @@
+{
+  "session_id": "20260806T085635.795170000Z",
+  "started_at": "2026-08-06T08:56:35.795254Z",
+  "finished_at": "2026-08-06T08:56:35.813846Z",
+  "sample_count": 50,
+  "models": [
+    {
+      "model": "minicpm-2b",
+      "engine": "openaiapi",
+      "status": "unavailable",
+      "error": "openaiapi: 端點上沒有模型 \"minicpm-v:8b\"；請先下載（ollama pull minicpm-v:8b）。現有：",
+      "completed_count": 0,
+      "failed_count": 0,
+      "duration_ns": 1073000,
+      "result_path": "minicpm-2b/result.json"
+    },
+    {
+      "model": "nllb-600m",
+      "engine": "ct2",
+      "status": "unavailable",
+      "error": "ct2: 連不上 sidecar http://127.0.0.1:8765；請先啟動（pm2 start ecosystem.config.js 或 scripts/ct2_server.sh）：Get \"http://127.0.0.1:8765/health\": dial tcp 127.0.0.1:8765: connect: connection refused",
+      "completed_count": 0,
+      "failed_count": 0,
+      "duration_ns": 111000,
+      "result_path": "nllb-600m/result.json"
+    },
+    {
+      "model": "opencc",
+      "engine": "opencc",
+      "status": "completed",
+      "completed_count": 50,
+      "failed_count": 0,
+      "duration_ns": 16705000,
+      "result_path": "opencc/result.json"
+    },
+    {
+      "model": "opus-mt",
+      "engine": "ct2",
+      "status": "unavailable",
+      "error": "ct2: 連不上 sidecar http://127.0.0.1:8765；請先啟動（pm2 start ecosystem.config.js 或 scripts/ct2_server.sh）：Get \"http://127.0.0.1:8765/health\": dial tcp 127.0.0.1:8765: connect: connection refused",
+      "completed_count": 0,
+      "failed_count": 0,
+      "duration_ns": 188000,
+      "result_path": "opus-mt/result.json"
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "engine": "openaiapi",
+      "status": "unavailable",
+      "error": "openaiapi: 端點上沒有模型 \"qwen2.5:1.5b\"；請先下載（ollama pull qwen2.5:1.5b）。現有：",
+      "completed_count": 0,
+      "failed_count": 0,
+      "duration_ns": 509000,
+      "result_path": "qwen2.5-1.5b/result.json"
+    }
+  ]
+}

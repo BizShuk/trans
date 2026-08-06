@@ -1,0 +1,17 @@
+{
+  "session_id": "20260806T085635.795170000Z",
+  "model": "qwen2.5-1.5b",
+  "engine": "openaiapi",
+  "engine_model": "qwen2.5:1.5b",
+  "requires": "ollama 或 llama-server",
+  "description": "Qwen2.5-1.5B-Instruct，中文語感佳、可下術語指示",
+  "status": "unavailable",
+  "error": "openaiapi: 端點上沒有模型 \"qwen2.5:1.5b\"；請先下載（ollama pull qwen2.5:1.5b）。現有：",
+  "started_at": "2026-08-06T08:56:35.813337Z",
+  "finished_at": "2026-08-06T08:56:35.813846Z",
+  "duration_ns": 509000,
+  "input_count": 50,
+  "completed_count": 0,
+  "failed_count": 0,
+  "samples": []
+}

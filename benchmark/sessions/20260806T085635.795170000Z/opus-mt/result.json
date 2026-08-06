@@ -1,0 +1,17 @@
+{
+  "session_id": "20260806T085635.795170000Z",
+  "model": "opus-mt",
+  "engine": "ct2",
+  "engine_model": "opus-mt",
+  "requires": "CTranslate2 sidecar",
+  "description": "Helsinki-NLP OPUS-MT，單一語言對、最省資源",
+  "status": "unavailable",
+  "error": "ct2: 連不上 sidecar http://127.0.0.1:8765；請先啟動（pm2 start ecosystem.config.js 或 scripts/ct2_server.sh）：Get \"http://127.0.0.1:8765/health\": dial tcp 127.0.0.1:8765: connect: connection refused",
+  "started_at": "2026-08-06T08:56:35.813148Z",
+  "finished_at": "2026-08-06T08:56:35.813336Z",
+  "duration_ns": 188000,
+  "input_count": 50,
+  "completed_count": 0,
+  "failed_count": 0,
+  "samples": []
+}

@@ -1,0 +1,415 @@
+{
+  "session_id": "20260806T085635.795170000Z",
+  "model": "opencc",
+  "engine": "opencc",
+  "description": "OpenCC 字典，中文字形與地區用語，行程內、決定性",
+  "status": "completed",
+  "started_at": "2026-08-06T08:56:35.796441Z",
+  "finished_at": "2026-08-06T08:56:35.813146Z",
+  "duration_ns": 16705000,
+  "input_count": 50,
+  "completed_count": 50,
+  "failed_count": 0,
+  "samples": [
+    {
+      "id": "S001",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "这个软件的视频质量很好。",
+      "output": "這個軟體的影片質量很好。",
+      "duration_ns": 16030292
+    },
+    {
+      "id": "S002",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "请把文件保存到外接硬盘，并确认备份已经完成。",
+      "output": "請把檔案儲存到外接硬碟，並確認備份已經完成。",
+      "duration_ns": 28625
+    },
+    {
+      "id": "S003",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "网络连接中断后，服务器自动重试了三次。",
+      "output": "網路連線中斷後，伺服器自動重試了三次。",
+      "duration_ns": 17542
+    },
+    {
+      "id": "S004",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "内存不足时，鼠标和打印机都可能没有反应。",
+      "output": "記憶體不足時，滑鼠和印表機都可能沒有反應。",
+      "duration_ns": 19084
+    },
+    {
+      "id": "S005",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "数据库每天凌晨两点执行增量备份。",
+      "output": "資料庫每天凌晨兩點執行增量備份。",
+      "duration_ns": 13125
+    },
+    {
+      "id": "S006",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "点击设置按钮，然后登录你的账户。",
+      "output": "點選設定按鈕，然後登入你的賬戶。",
+      "duration_ns": 11042
+    },
+    {
+      "id": "S007",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "新版应用程序已经可以从商店下载。",
+      "output": "新版應用程式已經可以從商店下載。",
+      "duration_ns": 18917
+    },
+    {
+      "id": "S008",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "开发人员正在审查源代码和接口文档。",
+      "output": "開發人員正在審查原始碼和介面文件。",
+      "duration_ns": 13334
+    },
+    {
+      "id": "S009",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "云端服务必须保护用户隐私和访问记录。",
+      "output": "雲端服務必須保護使用者隱私和訪問記錄。",
+      "duration_ns": 13209
+    },
+    {
+      "id": "S010",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "人工智能模型不应该修改原文中的数字。",
+      "output": "人工智慧模型不應該修改原文中的數字。",
+      "duration_ns": 13125
+    },
+    {
+      "id": "S011",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "公司发布了季度财报，营业收入同比增长百分之十二。",
+      "output": "公司釋出了季度財報，營業收入同比增長百分之十二。",
+      "duration_ns": 17208
+    },
+    {
+      "id": "S012",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "董事长将在股东大会说明下一年度的经营计划。",
+      "output": "董事長將在股東大會說明下一年度的經營計劃。",
+      "duration_ns": 18333
+    },
+    {
+      "id": "S013",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "本季毛利率提高了3.5个百分点，但净利润仍然下降。",
+      "output": "本季毛利率提高了3.5個百分點，但淨利潤仍然下降。",
+      "duration_ns": 17791
+    },
+    {
+      "id": "S014",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "供应链库存已经恢复到正常水平。",
+      "output": "供應鏈庫存已經恢復到正常水平。",
+      "duration_ns": 10292
+    },
+    {
+      "id": "S015",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "这笔订单总额为12,500美元，付款期限是三十天。",
+      "output": "這筆訂單總額為12,500美元，付款期限是三十天。",
+      "duration_ns": 15000
+    },
+    {
+      "id": "S016",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "请在星期五下班前签署合同并发送扫描件。",
+      "output": "請在星期五下班前簽署合同併傳送掃描件。",
+      "duration_ns": 13708
+    },
+    {
+      "id": "S017",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "会议改到下午三点，地点仍然是第二会议室。",
+      "output": "會議改到下午三點，地點仍然是第二會議室。",
+      "duration_ns": 11958
+    },
+    {
+      "id": "S018",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "客户反馈说操作流程太复杂，希望减少步骤。",
+      "output": "客戶反饋說操作流程太複雜，希望減少步驟。",
+      "duration_ns": 13250
+    },
+    {
+      "id": "S019",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "项目延期不是单一团队造成的，需要一起解决。",
+      "output": "專案延期不是單一團隊造成的，需要一起解決。",
+      "duration_ns": 14125
+    },
+    {
+      "id": "S020",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "新产品预计明年第一季度开始批量生产。",
+      "output": "新產品預計明年第一季度開始批次生產。",
+      "duration_ns": 12750
+    },
+    {
+      "id": "S021",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "别着急，我们先把问题一个一个弄清楚。",
+      "output": "彆著急，我們先把問題一個一個弄清楚。",
+      "duration_ns": 12583
+    },
+    {
+      "id": "S022",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "我早上买了一杯豆浆和两个包子。",
+      "output": "我早上買了一杯豆漿和兩個包子。",
+      "duration_ns": 9041
+    },
+    {
+      "id": "S023",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "天气预报说晚上会下大雨，记得带伞。",
+      "output": "天氣預報說晚上會下大雨，記得帶傘。",
+      "duration_ns": 11000
+    },
+    {
+      "id": "S024",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "这班火车将在十分钟后到达站台。",
+      "output": "這班火車將在十分鐘後到達站臺。",
+      "duration_ns": 11625
+    },
+    {
+      "id": "S025",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "快递已经放在一楼柜台，请凭短信领取。",
+      "output": "快遞已經放在一樓櫃檯，請憑簡訊領取。",
+      "duration_ns": 12084
+    },
+    {
+      "id": "S026",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "患者服药后如果出现不适，应立即联系医生。",
+      "output": "患者服藥後如果出現不適，應立即聯絡醫生。",
+      "duration_ns": 14875
+    },
+    {
+      "id": "S027",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "本协议受当地法律管辖，争议应通过仲裁解决。",
+      "output": "本協議受當地法律管轄，爭議應透過仲裁解決。",
+      "duration_ns": 13375
+    },
+    {
+      "id": "S028",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "计算机科学课程包含算法、网络和数据库。",
+      "output": "電腦科學課程包含演算法、網路和資料庫。",
+      "duration_ns": 12167
+    },
+    {
+      "id": "S029",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "桌上有一台计算机。",
+      "output": "桌上有一臺計算機。",
+      "duration_ns": 5417
+    },
+    {
+      "id": "S030",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "物理学中的质量不会随着地点改变。",
+      "output": "物理學中的質量不會隨著地點改變。",
+      "duration_ns": 10500
+    },
+    {
+      "id": "S031",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "电影字幕需要保留角色说话的语气。",
+      "output": "電影字幕需要保留角色說話的語氣。",
+      "duration_ns": 10125
+    },
+    {
+      "id": "S032",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "直播开始以后，观众人数很快超过一万。",
+      "output": "直播開始以後，觀眾人數很快超過一萬。",
+      "duration_ns": 11292
+    },
+    {
+      "id": "S033",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "游戏更新加入了新的地图和多人模式。",
+      "output": "遊戲更新加入了新的地圖和多人模式。",
+      "duration_ns": 10750
+    },
+    {
+      "id": "S034",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "我们预订了靠近车站的酒店，住两个晚上。",
+      "output": "我們預訂了靠近車站的酒店，住兩個晚上。",
+      "duration_ns": 11542
+    },
+    {
+      "id": "S035",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "菜单上有牛肉面、炒饭和三种甜点。",
+      "output": "選單上有牛肉麵、炒飯和三種甜點。",
+      "duration_ns": 9416
+    },
+    {
+      "id": "S036",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "收件地址是中山路100号，联系电话是02-1234-5678。",
+      "output": "收件地址是中山路100號，聯絡電話是02-1234-5678。",
+      "duration_ns": 17167
+    },
+    {
+      "id": "S037",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "活动时间为2026年8月6日09:30至11:00。",
+      "output": "活動時間為2026年8月6日09:30至11:00。",
+      "duration_ns": 14709
+    },
+    {
+      "id": "S038",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "请保留Markdown项目符号：- [ ] 完成测试。",
+      "output": "請保留Markdown專案符號：- [ ] 完成測試。",
+      "duration_ns": 14000
+    },
+    {
+      "id": "S039",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "文件位于/Users/example/Documents/report.txt。",
+      "output": "檔案位於/Users/example/Documents/report.txt。",
+      "duration_ns": 15042
+    },
+    {
+      "id": "S040",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "更多信息请访问https://example.com/docs?id=42。",
+      "output": "更多資訊請訪問https://example.com/docs?id=42。",
+      "duration_ns": 17084
+    },
+    {
+      "id": "S041",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "当前版本是v2.4.1，下一个版本将修复三个错误。",
+      "output": "當前版本是v2.4.1，下一個版本將修復三個錯誤。",
+      "duration_ns": 13250
+    },
+    {
+      "id": "S042",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "API请求成功后会返回JSON格式的数据。",
+      "output": "API請求成功後會返回JSON格式的資料。",
+      "duration_ns": 11917
+    },
+    {
+      "id": "S043",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "他说：“这个方案可以上线，但要先完成安全审查。”",
+      "output": "他說：“這個方案可以上線，但要先完成安全審查。”",
+      "duration_ns": 13625
+    },
+    {
+      "id": "S044",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "发布成功了！🎉 请通知所有测试人员。",
+      "output": "釋出成功了！🎉 請通知所有測試人員。",
+      "duration_ns": 10625
+    },
+    {
+      "id": "S045",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "默认值（default value）只在用户没有指定时生效。",
+      "output": "預設值（default value）只在使用者沒有指定時生效。",
+      "duration_ns": 14542
+    },
+    {
+      "id": "S046",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "注意：先保存数据；然后关闭程序。",
+      "output": "注意：先儲存資料；然後關閉程式。",
+      "duration_ns": 8750
+    },
+    {
+      "id": "S047",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "虽然需求临时改变，而且交付时间很紧，但是团队仍然完成了核心功能。",
+      "output": "雖然需求臨時改變，而且交付時間很緊，但是團隊仍然完成了核心功能。",
+      "duration_ns": 19083
+    },
+    {
+      "id": "S048",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "系统不会自动降级，也不会悄悄改用其他模型。",
+      "output": "系統不會自動降級，也不會悄悄改用其他模型。",
+      "duration_ns": 11334
+    },
+    {
+      "id": "S049",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "为什么同一句话在两次运行中得到不同结果？",
+      "output": "為什麼同一句話在兩次執行中得到不同結果？",
+      "duration_ns": 11875
+    },
+    {
+      "id": "S050",
+      "from": "zh-Hans",
+      "to": "zh-TW",
+      "input": "最后，请检查输出是否完整，并记录每个模型的来源。",
+      "output": "最後，請檢查輸出是否完整，並記錄每個模型的來源。",
+      "duration_ns": 17208
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+    "log_level": "info",
+    "log_format": "text",
+
+    "default_model": "",
+    "zh_profile": "s2twp",
+    "zh_target": "zh-TW",
+
+    "segment_max_chars": 1200,
+    "segment_max_chars_llm": 4000,
+
+    "ct2_endpoint": "http://127.0.0.1:8765",
+    "openai_endpoint": "http://127.0.0.1:11434/v1",
+    "openai_model": "qwen2.5:1.5b",
+
+    "request_timeout": "2m",
+    "cache_enabled": true
+}

@@ -1,0 +1,21 @@
+# TODO
+
+完成狀態與技術背景見 [plans/2026-08-06-translate-design.md](plans/2026-08-06-translate-design.md)
+及 [docs/memory/2026-08-06-engine-findings.md](docs/memory/2026-08-06-engine-findings.md)。
+
+## 產品能力 (Product Capabilities)
+
+- [ ] 增加 `translate zh --diff`，只輸出被 Conversion 改動的詞，支援人工覆核。
+- [ ] 完成本機 Translation cache；目前 `cache_enabled` 只有設定入口，尚未接入 SDK flow。
+
+## Model 與 Runtime 驗證 (Model and Runtime Validation)
+
+- [ ] 從空白 `~/.config/trans` 實跑 OPUS-MT clean-install path；Model inference 已驗證，
+      但 pull → local conversion → sidecar 的完整新環境流程尚未驗收。
+- [ ] 量測 NLLB-600M 在 Apple Silicon 長文件上的整體 throughput，確認是否適合預設跨語言路由。
+- [ ] 為 MiniCPM 選定適合文字翻譯且指令跟隨穩定的 Model tag；目前 registry 版本不建議用於翻譯。
+- [ ] 套用 `trans-ct2` ecosystem 並完成 PM2 live lifecycle acceptance；目前只有 definition 與 syntax verification。
+
+## 下游整合 (Downstream Integration)
+
+- [ ] 決定 `vid-note` 在 transcript 出口或 note generation 階段套用 Conversion，避免重複處理。

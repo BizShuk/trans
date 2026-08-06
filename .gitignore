@@ -1,0 +1,7 @@
+# 建置產物
+/translate
+
+# 本機設定與暫存
+/tmp/
+*.local.json
+.venv

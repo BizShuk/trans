@@ -1,0 +1,17 @@
+{
+  "session_id": "20260806T085635.795170000Z",
+  "model": "minicpm-2b",
+  "engine": "openaiapi",
+  "engine_model": "minicpm-v:8b",
+  "requires": "ollama 或 llama-server",
+  "description": "MiniCPM，中英短句、速度快",
+  "status": "unavailable",
+  "error": "openaiapi: 端點上沒有模型 \"minicpm-v:8b\"；請先下載（ollama pull minicpm-v:8b）。現有：",
+  "started_at": "2026-08-06T08:56:35.795256Z",
+  "finished_at": "2026-08-06T08:56:35.796329Z",
+  "duration_ns": 1073000,
+  "input_count": 50,
+  "completed_count": 0,
+  "failed_count": 0,
+  "samples": []
+}
