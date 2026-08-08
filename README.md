@@ -96,6 +96,8 @@ out, err := t.Document(ctx, longText)
 
 - OpenCC 中文轉換不需要外部 runtime，可直接使用。
 - 跨語言 Model 需要本機 runtime 與模型檔；以 `translate engine status` 檢查。
+  NMT Model 由 `~/projects/platform/inf` 的 `ct2` 元件提供 (`npm run start:ct2`
+  或 `npm run serve:ct2`)，decoder-only Model 由 ollama 提供；兩者都不由本工具啟動。
 - 預設 endpoint 指向 localhost。使用 `--endpoint` 或 SDK `Endpoint` 連到其他位置時，
   資料邊界由呼叫端自行負責。
 - OpenCC 刻意保留有歧義的孤立詞，例如 `计算机 → 計算機`、`质量 → 質量`；

@@ -17,10 +17,10 @@
 | 術語 (Term) | 英文 (English) | 定義 (Definition) | 出處 (Source) |
 | --- | --- | --- | --- |
 | 翻譯 | Translation | 將文字從一種語言轉成另一種語言 | `sdk/translate.go` |
-| 引擎 | Engine | 執行轉換或翻譯的方式，例如行程內字典、本機 sidecar 或模型服務 | `engine.Engine` |
+| 引擎 | Engine | 執行轉換或翻譯的方式，例如行程內字典或本機模型服務 | `engine.Engine` |
 | 模型 | Model | 使用者選擇的具名翻譯能力；同一引擎可承載多個模型 | `sdk.Model`、`sdk.Spec` |
 | 執行期 | Runtime | 提供模型推論能力的本機服務或行程 | `sdk.Spec.Requires` |
-| Sidecar | Sidecar | 獨立運行、以 HTTP 提供 encoder-decoder 模型推論的本機服務 | `engine/ct2`、`scripts/ct2_server.py` |
+| 翻譯服務 | Translation Service | 獨立運行、以 HTTP 提供 encoder-decoder 模型推論的本機服務；由 `platform/inf` 的 `ct2` 元件擁有，本專案只是客戶端 | `engine/ct2` |
 | 句級模型 | Sentence-level Model | 一次只處理一個句子的模型；文件處理會強制一句一批 | `sdk.Spec.SentenceLevel`、`sdk.Translator.maxChars` |
 | 健康檢查 | Health Check | 分辨服務未啟動、模型未安裝與模型可用的就緒檢查 | `engine.Engine.Health` |
 

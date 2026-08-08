@@ -17,16 +17,15 @@ trans/
 ├── engine/              # Engine port 與 runtime adapters
 │   ├── opencc/          # in-process OpenCC conversion
 │   ├── openaiapi/       # OpenAI-compatible local runtime adapter
-│   └── ct2/             # CTranslate2 sidecar adapter
+│   └── ct2/             # inf `ct2` translation service 的 HTTP client
 ├── segment/             # Document segmentation 與 lossless reassembly
 ├── glossary/            # user-owned forced replacement rules
 ├── benchmark/           # Sample corpus、Session runner、result persistence
 ├── cmd/                 # Cobra command tree
 ├── config/              # CLI-only gosdk/viper configuration
-├── scripts/             # metadata setup、model pull、CT2 sidecar
+├── scripts/             # metadata setup
 ├── docs/                # terminology 與 retrospective memory
 ├── plans/               # active design / implementation plans
-├── ecosystem.config.js  # PM2 task definition
 └── package.json         # unified project tasks
 ```
 
@@ -40,9 +39,7 @@ trans/
 | CLI | Cobra | command tree 與 flags |
 | Configuration | gosdk config + Viper | application config 與 shared config command |
 | Chinese conversion | longbridgeapp/opencc | embedded dictionary、無 cgo |
-| Local model API | `net/http` | OpenAI-compatible endpoint 與 CT2 sidecar contract |
-| CT2 sidecar | Python + FastAPI + CTranslate2 | encoder-decoder Model inference |
-| Process management | PM2 ecosystem | `trans-ct2` long-running task definition |
+| Local model API | `net/http` | OpenAI-compatible endpoint 與 inf `ct2` service contract |
 
 ## 模組對應 (Module Mapping)
 
@@ -120,10 +117,12 @@ SDK consumer 必須透過 `sdk.Options` 傳入 Model、Endpoint、Timeout、Prof
 
 - OpenCC 在 executable 內運行，沒有外部 runtime。
 - `openaiapi` 預設連接 localhost 的 OpenAI-compatible endpoint，可由 caller 覆寫。
-- `ct2` 透過 `scripts/ct2_server.py` 提供本機 HTTP sidecar。
-- `ecosystem.config.js` 定義 `trans-ct2` PM2 task；不會因 build 或 setup 自動套用。
+- `ct2` 連接 `~/projects/platform/inf` 的 `ct2` 元件 (預設 `http://127.0.0.1:8765`)。
+  該服務`不屬於本專案`：它與 funasr 同構，由 inf 以 docker (`npm run start:ct2`)
+  或原生 (`npm run serve:ct2`) 啟動，NMT 權重放在 `~/.cache/ct2/models`。
+  協定 (`POST /v1/translations`、`GET /v1/models`、`GET /health`) 由該元件的
+  README 單一擁有，request 欄位與 agentsdk `provider.TranslateRequest` 對齊。
 - `scripts/run.sh` 只建立 metadata directories 與 script permissions，不啟動服務。
-- 套用 ecosystem 使用 `pm2 task start ./ecosystem.config.js`；套用前需確認其中的 local paths。
 
 ## 開發指南 (Development Guide)
 
@@ -135,7 +134,8 @@ go fmt ./...
 ```
 
 Production verification 應將 build output 導向 temporary directory，避免覆寫 workspace artifact。
-Live Model、paid service 與 PM2 acceptance 不屬於 deterministic Go tests；若未執行必須分開回報。
+Live Model 與 paid service 不屬於 deterministic Go tests；若未執行必須分開回報。
+`ct2` 的 live acceptance 需要 inf 的 `ct2` 元件在跑，屬跨 repo 驗證。
 
 ## 慣例 (Conventions)
 

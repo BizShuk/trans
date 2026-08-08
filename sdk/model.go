@@ -73,14 +73,14 @@ var specs = map[Model]Spec{
 	},
 	ModelNLLB600M: {
 		Model: ModelNLLB600M, Engine: ct2.Name, EngineModel: "nllb-600m",
-		Requires:        "CTranslate2 sidecar",
+		Requires:        "inf ct2 service",
 		SentenceLevel:   true,
 		NormalizeScript: true,
 		Description:     "NLLB-200-distilled-600M，200 語互譯",
 	},
 	ModelOpusMT: {
 		Model: ModelOpusMT, Engine: ct2.Name, EngineModel: "opus-mt-en-zh",
-		Requires:        "CTranslate2 sidecar",
+		Requires:        "inf ct2 service",
 		SentenceLevel:   true,
 		NormalizeScript: true,
 		// OPUS-MT 是`每個語言對一顆模型`，因此預設只綁英→中；

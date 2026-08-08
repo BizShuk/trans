@@ -134,10 +134,6 @@ func TestExecutableUsesTransAppName(t *testing.T) {
 func TestRuntimePathsDoNotUseObsoleteAppName(t *testing.T) {
 	paths := []string{
 		"cmd/glossary.go",
-		"cmd/pull.go",
-		"ecosystem.config.js",
-		"scripts/ct2_server.py",
-		"scripts/pull_model.py",
 		"scripts/run.sh",
 	}
 	for _, path := range paths {

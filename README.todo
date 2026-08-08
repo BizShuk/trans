@@ -10,11 +10,10 @@
 
 ## Model 與 Runtime 驗證 (Model and Runtime Validation)
 
-- [ ] 從空白 `~/.config/trans` 實跑 OPUS-MT clean-install path；Model inference 已驗證，
-      但 pull → local conversion → sidecar 的完整新環境流程尚未驗收。
+- [ ] 從空白模型目錄實跑 OPUS-MT clean-install path；Model inference 已驗證，
+      但 pull → local conversion → 服務載入的完整新環境流程尚未驗收（改由 inf `ct2` 元件負責）。
 - [ ] 量測 NLLB-600M 在 Apple Silicon 長文件上的整體 throughput，確認是否適合預設跨語言路由。
 - [ ] 為 MiniCPM 選定適合文字翻譯且指令跟隨穩定的 Model tag；目前 registry 版本不建議用於翻譯。
-- [ ] 套用 `trans-ct2` ecosystem 並完成 PM2 live lifecycle acceptance；目前只有 definition 與 syntax verification。
 
 ## 下游整合 (Downstream Integration)
 
