@@ -5,9 +5,11 @@
 
 ## 產品能力 (Product Capabilities)
 
-- [ ] 增加 `translate zh --diff`，只輸出被 Conversion 改動的詞，支援人工覆核。
-- [ ] 完成本機 Translation cache；目前 `cache_enabled` 只有設定入口，尚未接入 SDK flow。
+- [ ] [P1] [feature] 增加 `translate zh --diff`，只輸出被 Conversion 改動的詞，支援人工覆核。
+- [ ] [P1] [feature] 完成本機 Translation cache；目前 `cache_enabled` 只有設定入口，尚未接入 SDK flow。
 
 ## 下游整合 (Downstream Integration)
 
-- [ ] 決定 `vid-note` 在 transcript 出口或 note generation 階段套用 Conversion，避免重複處理。
+- [ ] [P2] [chore] 決定 `vid-note` 在 transcript 出口或 note generation 階段套用 Conversion，避免重複處理。
+
+## Archive
