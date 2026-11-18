@@ -109,7 +109,7 @@ root `main.go` 以 gosdk application name `trans` 初始化設定。預設根目
 └── logs/
 ```
 
-設定預設值由 `config/default_settings.json` 單一擁有。`config` 只服務 CLI；
+設定預設值由 `config/example/settings.example.json` 單一擁有。`config` 只服務 CLI；
 SDK consumer 必須透過 `sdk.Options` 傳入 Model、Endpoint、Timeout、Profile 與 Glossary。
 設定檔中尚未被 application flow 消費的 key 不代表對應 capability 已完成。
 

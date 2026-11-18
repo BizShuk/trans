@@ -10,12 +10,18 @@ import (
 	"encoding/json"
 	"time"
 
+	gosdkcmdconfig "github.com/bizshuk/gosdk/cmd/config"
 	gosdkconfig "github.com/bizshuk/gosdk/config"
 	"github.com/spf13/viper"
 )
 
-//go:embed default_settings.json
+//go:embed example/settings.example.json
 var defaultSettingsJSON string
+
+// init 登記內嵌範例, 供 `config default` 複製到設定目錄.
+func init() {
+	gosdkcmdconfig.MustRegisterDefault("settings.json", []byte(defaultSettingsJSON))
+}
 
 // Default 初始化設定；settings.json 不存在時以內嵌預設值建立。
 func Default(options ...gosdkconfig.ConfigOption) {
@@ -31,7 +37,7 @@ func Default(options ...gosdkconfig.ConfigOption) {
 func applyEmbeddedDefaults() {
 	var defaults map[string]any
 	if err := json.Unmarshal([]byte(defaultSettingsJSON), &defaults); err != nil {
-		panic("config: default_settings.json 不是合法 JSON: " + err.Error())
+		panic("config: config/example/settings.example.json 不是合法 JSON: " + err.Error())
 	}
 	for key, value := range defaults {
 		viper.SetDefault(key, value)
