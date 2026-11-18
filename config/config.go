@@ -7,7 +7,6 @@ package config
 
 import (
 	_ "embed"
-	"encoding/json"
 	"time"
 
 	gosdkcmdconfig "github.com/bizshuk/gosdk/cmd/config"
@@ -23,25 +22,10 @@ func init() {
 	gosdkcmdconfig.MustRegisterDefault("settings.json", []byte(defaultSettingsJSON))
 }
 
-// Default 初始化設定；settings.json 不存在時以內嵌預設值建立。
+// Default 初始化設定；內嵌範例是最低層預設值 (WithDefaultValue), 任何設定檔都蓋得過它。
 func Default(options ...gosdkconfig.ConfigOption) {
 	options = append(options, gosdkconfig.WithDefaultValue(defaultSettingsJSON))
 	gosdkconfig.Default(options...)
-	applyEmbeddedDefaults()
-}
-
-// applyEmbeddedDefaults 把內嵌預設值註冊成 viper default。
-//
-// gosdk 只在 settings.json 不存在時寫出預設檔，因此既有安裝不會拿到
-// 後續版本新增的 key —— 少了這一步，新設定在舊機器上會靜默變成零值。
-func applyEmbeddedDefaults() {
-	var defaults map[string]any
-	if err := json.Unmarshal([]byte(defaultSettingsJSON), &defaults); err != nil {
-		panic("config: config/example/settings.example.json 不是合法 JSON: " + err.Error())
-	}
-	for key, value := range defaults {
-		viper.SetDefault(key, value)
-	}
 }
 
 // DefaultModel 是未指定時使用的模型，空字串代表依語言對自動路由。

@@ -118,7 +118,7 @@ func TestExecutableUsesTransAppName(t *testing.T) {
 	}
 
 	configBase := t.TempDir()
-	runCmd := exec.Command(binary, "config", "--files")
+	runCmd := exec.Command(binary, "config", "default")
 	runCmd.Dir = t.TempDir()
 	runCmd.Env = append(os.Environ(), "XDG_CONFIG_HOME="+configBase)
 	if output, err := runCmd.CombinedOutput(); err != nil {
