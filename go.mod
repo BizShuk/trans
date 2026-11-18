@@ -3,7 +3,7 @@ module github.com/bizshuk/trans
 go 1.26.3
 
 require (
-	github.com/bizshuk/gosdk v1.3.27
+	github.com/bizshuk/gosdk v1.8.5
 	github.com/longbridgeapp/opencc v0.3.13
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.21.0
@@ -12,6 +12,7 @@ require (
 require (
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
+	github.com/gocarina/gocsv v0.0.0-20260523204920-c264028e67ea // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/liuzl/cedar-go v0.0.0-20170805034717-80a9c64b256d // indirect
