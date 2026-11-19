@@ -5,3 +5,4 @@
 /tmp/
 *.local.json
 .venv
+node_modules/
