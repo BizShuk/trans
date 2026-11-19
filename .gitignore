@@ -6,3 +6,4 @@
 *.local.json
 .venv
 node_modules/
+pnpm-lock.yaml
